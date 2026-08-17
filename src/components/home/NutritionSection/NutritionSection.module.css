@@ -1,0 +1,130 @@
+.section {}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+.content {}
+
+.noteBox {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  background: var(--color-green-pale);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.noteIcon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.noteText {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-green);
+}
+
+.tableWrap {}
+
+.tableCard {
+  background: var(--color-charcoal);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.tableHeader {
+  padding: var(--space-xl) var(--space-2xl) var(--space-lg);
+}
+
+.tableTitle {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+}
+
+.tableSubtitle {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+}
+
+.tableDividerThick {
+  height: 10px;
+  background: rgba(255,255,255,0.9);
+}
+
+.tableBody {
+  padding: var(--space-sm) var(--space-2xl);
+}
+
+.tableRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableRowHighlight {
+  padding: 14px 0;
+}
+
+.tableRowHighlight .rowLabel,
+.tableRowHighlight .rowValue {
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--color-white);
+}
+
+.tableRowIndent .rowLabel {
+  padding-left: var(--space-lg);
+  font-size: 0.8rem;
+}
+
+.tableRowHeader .rowLabel {
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+.rowLabel {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.rowValue {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+}
+
+.tableFooter {
+  padding: var(--space-md) var(--space-2xl);
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+}

@@ -1,0 +1,33 @@
+.bar {
+  background: var(--color-green);
+  padding: var(--space-md) 0;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(var(--space-xl), 5vw, var(--space-5xl));
+  flex-wrap: wrap;
+  row-gap: var(--space-sm);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.icon {
+  font-size: 1rem;
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  white-space: nowrap;
+}

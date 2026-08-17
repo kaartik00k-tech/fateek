@@ -1,0 +1,109 @@
+.section {
+  background: var(--color-beige);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+/* Image */
+.imageWrap {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.imageWrap:hover .image {
+  transform: scale(1.04);
+}
+
+.imageBadge {
+  position: absolute;
+  bottom: var(--space-xl);
+  left: var(--space-xl);
+  background: rgba(253, 250, 246, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+  padding: var(--space-sm) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.badgeEmoji {
+  font-size: 1.1rem;
+}
+
+.badgeText {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-green);
+}
+
+/* Content */
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pillars */
+.pillars {
+  margin-top: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.pillar {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.pillarDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-green);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.pillarLabel {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  margin-bottom: 2px;
+}
+
+.pillarDesc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .imageWrap {
+    aspect-ratio: 16/9;
+  }
+}

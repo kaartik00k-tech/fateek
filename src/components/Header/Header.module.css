@@ -1,0 +1,247 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(253, 250, 246, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: all 250ms ease;
+}
+
+.header.scrolled {
+  background: rgba(253, 250, 246, 0.97);
+  border-bottom-color: var(--color-border-light);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-green);
+  letter-spacing: -0.02em;
+}
+
+.logoSub {
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 1px;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.navLink {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-charcoal-light);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 100%;
+  height: 1.5px;
+  background: var(--color-green);
+  transition: right var(--transition-base);
+}
+
+.navLink:hover {
+  color: var(--color-green);
+}
+
+.navLink:hover::after {
+  right: 0;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.cartBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--color-charcoal);
+  transition: all var(--transition-fast);
+}
+
+.cartBtn:hover {
+  background: var(--color-green-pale);
+  color: var(--color-green);
+}
+
+.cartBadge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-green);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.2s var(--transition-spring);
+}
+
+.shopBtn {
+  display: none;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  border-radius: var(--radius-md);
+}
+
+.hamLine {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--color-charcoal);
+  border-radius: 2px;
+  transition: all var(--transition-base);
+  transform-origin: center;
+}
+
+.hamLineOpen1 {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--color-charcoal);
+  border-radius: 2px;
+  transform: translateY(6.5px) rotate(45deg);
+  transition: all var(--transition-base);
+}
+
+.hamLineOpen2 {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--color-charcoal);
+  border-radius: 2px;
+  opacity: 0;
+  transition: all var(--transition-base);
+}
+
+.hamLineOpen3 {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--color-charcoal);
+  border-radius: 2px;
+  transform: translateY(-6.5px) rotate(-45deg);
+  transition: all var(--transition-base);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-cream);
+  padding: var(--space-xl) var(--space-xl) var(--space-3xl);
+  flex-direction: column;
+  gap: var(--space-lg);
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+  overflow-y: auto;
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobileNavLink {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--color-charcoal);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: color var(--transition-fast);
+}
+
+.mobileNavLink:hover {
+  color: var(--color-green);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav, .shopBtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+}
+
+@media (min-width: 900px) {
+  .shopBtn {
+    display: inline-flex;
+  }
+}
