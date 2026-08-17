@@ -1,7 +1,0 @@
-# Add a specific hidden file
-git add .next
-git add node_modules
-
-# Commit and push
-git commit -m "Add hidden configuration file"
-git push origin main
