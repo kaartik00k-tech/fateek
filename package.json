@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "mkdir -p src && if [ -d pages ]; then mv pages src/pages; fi && if [ -d lib ]; then mv lib src/lib; fi",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
